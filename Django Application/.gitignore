@@ -1,4 +1,6 @@
 venv
+.venv
+.env
 .vs
 .vscode
 models/*
@@ -7,4 +9,3 @@ uploaded_images/*
 !uploaded_images/Readme.txt
 uploaded_videos/*
 !uploaded_videos/Readme.txt
-
