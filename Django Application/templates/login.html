@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>LOGIN</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        .body-bg {
+            background-color: #9921e8;
+            background-image: linear-gradient(315deg, #9921e8 0%, #5f72be 74%);
+        }
+    </style>
+</head>
+<body class="body-bg min-h-screen flex flex-col justify-center items-center font-sans">
+
+<header class="mb-8">
+    <h1 class="text-3xl md:text-4xl lg:text-5xl font-bold text-white">Deep-Fake Detection System</h1>
+</header>
+
+<main class="bg-white max-w-md w-full p-8 md:p-12 rounded-lg shadow-2xl">
+    <section>
+        <h2 class="text-2xl font-bold text-gray-800">LOGIN</h2>
+        <p class="text-gray-600 pt-2">Sign in to your account.</p>
+    </section>
+
+    <section class="mt-8">
+        <form class="space-y-6" method="POST" action="{% url 'ml_app:login' %}">
+            {% csrf_token %}
+            <div>
+                <label class="block text-gray-700 text-sm font-bold" for="email">Email</label>
+                <input type="email" id="email" name="email" class="block w-full bg-gray-200 rounded-md text-gray-800 border-2 focus:outline-none focus:border-purple-600 transition duration-500 px-4 py-2" required>
+            </div>
+            <div>
+                <label class="block text-gray-700 text-sm font-bold" for="password">Password</label>
+                <input type="password" id="password" name="password" class="block w-full bg-gray-200 rounded-md text-gray-800 border-2 focus:outline-none focus:border-purple-600 transition duration-500 px-4 py-2" required>
+            </div>
+            <div class="flex justify-end">
+                <a href="#" class="text-sm text-purple-600 hover:text-purple-700 hover:underline">Forgot your password?</a>
+            </div>
+            <button class="bg-purple-600 hover:bg-purple-700 text-white font-bold py-2 rounded-md shadow-lg hover:shadow-xl transition duration-200 w-full" type="submit">Sign In</button>
+        </form>
+    </section>
+</main>
+
+<div class="max-w-md mt-8 text-center text-white">
+    <p>Don't have an account? <a href="{% url 'ml_app:register' %}" class="font-bold hover:underline">Sign up</a>.</p>
+</div>
+
+</body>
+</html>
