@@ -31,7 +31,10 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ml_app.apps.MlAppConfig'
+    'ml_app',
+    'tailwind',
+    'crispy_forms',
+    'crispy_tailwind',
 ]
 
 MIDDLEWARE = [
@@ -110,6 +113,10 @@ MAX_UPLOAD_SIZE = "104857600"
 MEDIA_URL = "/media/"
 
 MEDIA_ROOT = os.path.join(PROJECT_DIR, 'uploaded_videos')
+
+LOGIN_REDIRECT_URL = 'http://localhost:8000/'
+
+AUTH_USER_MODEL = 'ml_app.User' 
 
 #for extra logging in production environment
 if DEBUG == False:
